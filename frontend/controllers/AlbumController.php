@@ -9,9 +9,8 @@ use common\models\Category;
 /**
  * Index controller
  */
-class IndexController extends FController
+class AlbumController extends FController
 {
-
 
     /**
      * Displays homepage.
@@ -20,15 +19,11 @@ class IndexController extends FController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->renderPartial('index');
     }
 
-
-    /**
-     * 清除缓存
-     * @return [type] [description]
-     */
-    public function actionClear(){
-        Yii::$app->cache->flush();
+    public function actionView()
+    {
+        return $this->renderPartial('view');
     }
 }

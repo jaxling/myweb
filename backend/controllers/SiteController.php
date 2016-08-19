@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\db\Query;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use common\models\LoginForm;
@@ -70,16 +71,31 @@ class SiteController extends AController
 
     public function actionLogin()
     {
+        //随机读取一句格言
+        $db = Yii::$app->db;
+
+        $sql = "SELECT COUNT(`id`) FROM `motto`";
+        $count = Yii::$app->db->createCommand($sql)->queryScalar();
+
+
+        $sql = "SELECT * FROM `motto` ORDER BY FLOOR(1 + (RAND() *$count)) LIMIT 1;";
+        $motto = Yii::$app->db->createCommand($sql)->queryone();
+
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
+        $error = 0;
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
-            return $this->render('login', [
+            if(Yii::$app->request->post()){
+                $error = 1;
+            }
+            return $this->renderPartial('login', [
                 'model' => $model,
+                'error' => $error,
+                'motto' => $motto,
             ]);
         }
     }

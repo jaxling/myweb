@@ -20,30 +20,12 @@
                 'items' => [
                     ['label' => '用户', 'icon' => 'fa fa-dashboard', 'url' => ['/user'],
                         'items' => [
-                            ['label' => '用户', 'icon' => 'fa fa-file-code-o', 'url' => ['/user']],
-                            ['label' => '充值', 'icon' => 'fa fa-file-code-o', 'url' => ['/cart']],
-                            ['label' => '支付', 'icon' => 'fa fa-file-code-o', 'url' => ['/cart']],
-                            ['label' => '资金', 'icon' => 'fa fa-file-code-o', 'url' => ['/cart']],                            
+                            ['label' => '用户', 'icon' => 'fa fa-file-code-o', 'url' => ['/user']],                     
                         ],
                     ],
-                    ['label' => '订单', 'icon' => 'fa fa-dashboard', 'url' => ['/order'],
-                        'items' => [
-                            ['label' => '订单', 'icon' => 'fa fa-file-code-o', 'url' => ['/order']],
-                            ['label' => '购物车', 'icon' => 'fa fa-file-code-o', 'url' => ['/cart']],
-                        ],
-                    ],
-                    ['label' => '商品', 'icon' => 'fa fa-dashboard', 'url' => ['/product'],
-                        'items' => [
-                            ['label' => '商品', 'icon' => 'fa fa-file-code-o', 'url' => ['/product']],
-                            ['label' => '分类', 'icon' => 'fa fa-file-code-o', 'url' => ['/category']],
-                            ['label' => '品牌', 'icon' => 'fa fa-file-code-o', 'url' => ['/brand']],
-                            ['label' => '商品相册', 'icon' => 'fa fa-file-code-o', 'url' => ['/product-gallery']],
-                        ],
-
-                    ],
-                    
                     ['label' => '文章', 'icon' => 'fa fa-dashboard', 'url' => ['/post'],
                         'items' => [
+                            ['label' => '格言', 'icon' => 'fa fa-file-code-o', 'url' => ['/motto']],
                             ['label' => '文章', 'icon' => 'fa fa-file-code-o', 'url' => ['/post']],
                             ['label' => '评论', 'icon' => 'fa fa-file-code-o', 'url' => ['/post-comment']],
                         ],
@@ -52,13 +34,6 @@
                         'items' => [
                             ['label' => '相册', 'icon' => 'fa fa-file-code-o', 'url' => ['/album']],
                             ['label' => '图片库', 'icon' => 'fa fa-file-code-o', 'url' => ['/gallery']],
-                        ],
-                    ],
-                    ['label' => '配送管理', 'icon' => 'fa fa-file-code-o', 'url' => ['/album'],
-                        'items' => [
-                            ['label' => '配送方式', 'icon' => 'fa fa-file-code-o', 'url' => ['/shipping-template']],
-                            ['label' => '快递', 'icon' => 'fa fa-file-code-o', 'url' => ['/shipping']],
-                            ['label' => '地区', 'icon' => 'fa fa-dashboard', 'url' => ['/region'],],
                         ],
                     ],
 

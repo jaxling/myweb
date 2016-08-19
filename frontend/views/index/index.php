@@ -1,100 +1,146 @@
-<?php
+<!DOCTYPE HTML>
+<!--
+  Overflow by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Ling丶</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main1.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  </head>
+  <body>
 
-use yii\helpers\Html;
-use yii\widgets\DetailView;
+    <!-- Header -->
+      <section id="header">
+        <header>
+          <h1>Overflow</h1>
+          <p>By HTML5 UP</p>
+        </header>
+        <footer>
+          <a href="#banner" class="button style2 scrolly-middle">Proceed as anticipated</a>
+        </footer>
+      </section>
 
-use yii\helpers\Url;
-?>
+    <!-- Banner -->
+      <section id="banner">
+        <header>
+          <h2>This is Overflow</h2>
+        </header>
+        <p>A brand new site template designed by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a>.<br />
+        It’s fully responsive, built on <strong>skel</strong>, and of course entirely free<br />
+        under the <a href="http://html5up.net/license">Creative Commons license</a>.</p>
+        <footer>
+          <a href="#first" class="button style2 scrolly">Act on this message</a>
+        </footer>
+      </section>
 
-
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Welcome!</h1>
-
-        <p class="lead">Lifei's note! Since 2007.</p>
-
-        <p><a class="btn btn-lg btn-success" href="<?= Url::toRoute(['post/index']);?>">See blog</a></p>
-    </div>
-
-
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="http://img1.imgtn.bdimg.com/it/u=1067430041,1449275162&fm=21&gp=0.jpg" style="width:100%;" alt="">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://img3.imgtn.bdimg.com/it/u=2412847390,539820635&fm=21&gp=0.jpg" style="width:100%;" alt="">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://img2.imgtn.bdimg.com/it/u=3406081147,4219562975&fm=21&gp=0.jpg" style="width:100%;" alt="">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-<div style="padding-bottom: 25px;"></div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>技术</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="<?= Url::toRoute(['post/index', 'c' => 1]);?>">More &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>生活</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="<?= Url::toRoute(['post/index', 'c' => 2]);?>">More &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>随笔</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="<?= Url::toRoute(['post/index', 'c' => 3]);?>">More &raquo;</a></p>
-            </div>
+    <!-- Feature 1 -->
+      <article id="first" class="container box style1 right">
+        <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+        <div class="inner">
+          <header>
+            <h2>Lorem ipsum<br />
+            dolor sit amet</h2>
+          </header>
+          <p>Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
         </div>
+      </article>
 
-    </div>
-</div>
+    <!-- Feature 2 -->
+      <article class="container box style1 left">
+        <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+        <div class="inner">
+          <header>
+            <h2>Mollis posuere<br />
+            lectus lacus</h2>
+          </header>
+          <p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
+        </div>
+      </article>
+
+    <!-- Portfolio -->
+      <article class="container box style2">
+        <header>
+          <h2>Magnis parturient</h2>
+          <p>Justo phasellus et aenean dignissim<br />
+          placerat cubilia purus lectus.</p>
+        </header>
+        <div class="inner gallery">
+          <div class="row 0%">
+            <div class="3u 12u(mobile)">
+              <a href="images/fulls/01.jpg" class="image fit">
+                <img src="images/thumbs/01.jpg" alt="" title="Ad infinitum" />
+              </a>
+            </div>
+            <div class="3u 12u(mobile)">
+              <a href="images/fulls/02.jpg" class="image fit">
+                <img src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" />
+              </a>
+            </div>
+            <div class="3u 12u(mobile)"><a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" alt="" title="Raven" /></a></div>
+            <div class="3u 12u(mobile)"><a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" alt="" title="I'll have a cup of Disneyland, please" /></a></div>
+          </div>
+          <div class="row 0%">
+            <div class="3u 12u(mobile)"><a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" alt="" title="Cherish" /></a></div>
+            <div class="3u 12u(mobile)"><a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" alt="" title="Different." /></a></div>
+            <div class="3u 12u(mobile)"><a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" alt="" title="History was made here" /></a></div>
+            <div class="3u 12u(mobile)"><a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" /></a></div>
+          </div>
+        </div>
+      </article>
+
+    <!-- Contact -->
+      <article class="container box style3">
+        <header>
+          <h2>Nisl sed ultricies</h2>
+          <p>Diam dignissim lectus eu ornare volutpat orci.</p>
+        </header>
+        <form method="post" action="#">
+          <div class="row 50%">
+            <div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name" /></div>
+            <div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email" /></div>
+            <div class="12u$">
+              <textarea name="message" placeholder="Message"></textarea>
+            </div>
+            <div class="12u$">
+              <ul class="actions">
+                <li><input type="submit" value="Send Message" /></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </article>
+
+    <!-- Generic -->
+    <section id="footer">
+      <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+        <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+        <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      </ul>
+      <div class="copyright">
+        <ul class="menu">
+          <li>&copy; Ling's&nbsp; All rights reserved.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/jquery.poptrox.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/main1.js"></script>
+
+  </body>
+</html>
