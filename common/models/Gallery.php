@@ -15,6 +15,7 @@ use Yii;
  * @property string $desc
  * @property integer $is_page_img
  * @property integer $status
+ * @property integer $sort_number 
  * @property string $create_at
  * @property string $update_at
  */
@@ -35,7 +36,7 @@ class Gallery extends \yii\db\ActiveRecord
     {
         return [
             [['img_url', ], 'required'],
-            [['album_id', 'is_page_img', 'status'], 'integer'],
+            [['album_id', 'is_page_img', 'status','sort_number'], 'integer'],
             [['desc'], 'string'],
             [['create_at', 'update_at'], 'safe'],
             [['img_url', 'img_url_thumb'], 'string', 'max' => 255],
@@ -70,6 +71,7 @@ class Gallery extends \yii\db\ActiveRecord
             'create_at' => '创建时间',
             'update_at' => '更新时间',
             'album.name' => '相册名称',
+            'sort_number' => '排序',
         ];
     }
 

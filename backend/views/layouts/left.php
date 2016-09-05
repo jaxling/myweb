@@ -30,6 +30,11 @@
                             ['label' => '评论', 'icon' => 'fa fa-file-code-o', 'url' => ['/post-comment']],
                         ],
                     ],
+                    ['label' => '音乐', 'icon' => 'fa fa-file-code-o', 'url' => ['/music'],
+                        'items' => [
+                            ['label' => '音乐', 'icon' => 'fa fa-file-code-o', 'url' => ['/music']],
+                        ],
+                    ],
                     ['label' => '相册', 'icon' => 'fa fa-file-code-o', 'url' => ['/album'],
                         'items' => [
                             ['label' => '相册', 'icon' => 'fa fa-file-code-o', 'url' => ['/album']],

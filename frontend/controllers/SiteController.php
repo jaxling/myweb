@@ -138,7 +138,7 @@ class SiteController extends FController
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        return $this->renderPartial('about');
     }
 
     /**

@@ -52,6 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=> 'status',
                 'value' => Gallery::itemAlias("status", $model->status),
             ],
+            'sort_number',
             'create_at',
             'update_at',
 

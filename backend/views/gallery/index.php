@@ -57,6 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'desc:ntext',
             // 'is_page_img',
             // 'status',
+            // 'sort_number', 
             // 'create_at',
             // 'update_at',
 

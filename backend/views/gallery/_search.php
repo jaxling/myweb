@@ -31,6 +31,8 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'status') ?>
 
+    <?php // echo $form->field($model, 'sort_number') ?>
+
     <?php // echo $form->field($model, 'create_at') ?>
 
     <?php // echo $form->field($model, 'update_at') ?>

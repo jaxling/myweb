@@ -13,16 +13,16 @@
     <link rel="stylesheet" href="assets/css/main1.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
   </head>
-  <body>
+  <body style="background-image: url('../images/background/<?= rand(1,5);?>.jpg')">
 
     <!-- Header -->
       <section id="header">
         <header>
-          <h1>Overflow</h1>
-          <p>By HTML5 UP</p>
+          <h1>STRUGGLE</h1>
+          <p>By Ling</p>
         </header>
         <footer>
-          <a href="#banner" class="button style2 scrolly-middle">Proceed as anticipated</a>
+          <a href="#banner" class="button style2 scrolly-middle" style="text-decoration:none">Individual Resume</a>
         </footer>
       </section>
 
@@ -52,17 +52,6 @@
       </article>
 
     <!-- Feature 2 -->
-      <article class="container box style1 left">
-        <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-        <div class="inner">
-          <header>
-            <h2>Mollis posuere<br />
-            lectus lacus</h2>
-          </header>
-          <p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
-        </div>
-      </article>
-
     <!-- Portfolio -->
       <article class="container box style2">
         <header>
@@ -73,20 +62,30 @@
         <div class="inner gallery">
           <div class="row 0%">
             <div class="3u 12u(mobile)">
-              <a href="images/fulls/01.jpg" class="image fit">
-                <img src="images/thumbs/01.jpg" alt="" title="Ad infinitum" />
+              <a href="images/thumbs/best_1.jpg" class="image fit">
+                <img src="images/thumbs/best_1.jpg" alt="" title="March 2015 , Walk on the edge of West Lake With My Brother Cheers" />
               </a>
             </div>
             <div class="3u 12u(mobile)">
-              <a href="images/fulls/02.jpg" class="image fit">
-                <img src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" />
+              <a href="images/thumbs/best_2.jpg" class="image fit">
+                <img src="images/thumbs/best_2.jpg" alt="" title="June 2014 , The Way Go To The Class After The Rain" />
               </a>
             </div>
-            <div class="3u 12u(mobile)"><a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" alt="" title="Raven" /></a></div>
-            <div class="3u 12u(mobile)"><a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" alt="" title="I'll have a cup of Disneyland, please" /></a></div>
+            <div class="3u 12u(mobile)">
+              <a href="images/thumbs/best_3.jpg" class="image fit">
+                <img src="images/thumbs/best_3.jpg" alt="" title="November 2014 , Front of 10th Formitory Building After the Autumn Wind" />
+              </a>
+            </div>
+            <div class="3u 12u(mobile)">
+              <a href="images/thumbs/best_4.jpg" class="image fit">
+                <img src="images/thumbs/best_4.jpg" alt="" title="February 2015 , Xixi Wetland With Tianxiao Yang In The Heavy Snow" />
+              </a>
+            </div>
           </div>
           <div class="row 0%">
-            <div class="3u 12u(mobile)"><a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" alt="" title="Cherish" /></a></div>
+            <div class="3u 12u(mobile)">
+            <a href="images/fulls/05.jpg" class="image fit">
+            <img src="images/thumbs/05.jpg" alt="" title="Cherish" /></a></div>
             <div class="3u 12u(mobile)"><a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" alt="" title="Different." /></a></div>
             <div class="3u 12u(mobile)"><a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" alt="" title="History was made here" /></a></div>
             <div class="3u 12u(mobile)"><a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" /></a></div>
@@ -100,20 +99,6 @@
           <h2>Nisl sed ultricies</h2>
           <p>Diam dignissim lectus eu ornare volutpat orci.</p>
         </header>
-        <form method="post" action="#">
-          <div class="row 50%">
-            <div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name" /></div>
-            <div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email" /></div>
-            <div class="12u$">
-              <textarea name="message" placeholder="Message"></textarea>
-            </div>
-            <div class="12u$">
-              <ul class="actions">
-                <li><input type="submit" value="Send Message" /></li>
-              </ul>
-            </div>
-          </div>
-        </form>
       </article>
 
     <!-- Generic -->

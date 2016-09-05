@@ -18,7 +18,7 @@ class GallerySearch extends Gallery
     public function rules()
     {
         return [
-            [['id', 'album_id', 'is_page_img', 'status'], 'integer'],
+            [['id', 'album_id', 'is_page_img', 'status','sort_number'], 'integer'],
             [['img_url', 'img_url_thumb', 'title', 'desc', 'create_at', 'update_at'], 'safe'],
         ];
     }
@@ -64,6 +64,7 @@ class GallerySearch extends Gallery
             'album_id' => $this->album_id,
             'is_page_img' => $this->is_page_img,
             'status' => $this->status,
+            'sort_number' => $this->sort_number, 
             'create_at' => $this->create_at,
             'update_at' => $this->update_at,
         ]);

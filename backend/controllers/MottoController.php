@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * MottoController implements the CRUD actions for Motto model.
  */
-class MottoController extends Controller
+class MottoController extends AController
 {
     /**
      * @inheritdoc

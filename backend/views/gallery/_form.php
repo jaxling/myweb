@@ -30,6 +30,8 @@ use common\models\Album;
 
     <?= $form->field($model, 'status')->dropDownList(Gallery::itemAlias('status')) ?>
 
+    <?= $form->field($model, 'sort_number')->textInput() ?>
+
     <?php //$form->field($model, 'create_at')->textInput() ?>
 
     <?php //$form->field($model, 'update_at')->textInput() ?>

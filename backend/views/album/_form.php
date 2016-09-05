@@ -21,22 +21,7 @@ use common\models\Album;
 
     <?= $form->field($model, 'category_id')->dropDownList(Album::itemAlias('category_id')) ?>
 
-
-<div class="form-group field-postmtb-album_id">
-<label class="control-label" for="postmtb-album_id">相册</label>
-<select id="postmtb-album_id" class="form-control" name="Postmtb[album_id]">
-<option value="0">相册</option>
-<?php
-$albums = Album::listId();
-foreach ($albums as $key => $value) {
-    if($key == $model->album_id) {
-        echo '<option value="'.$key.'" selected="selected">'.$value.'</option>';
-    } else {
-        echo '<option value="'.$key.'">'.$value.'</option>';
-    } 
-}
-?>
-</select>
+    <?= $form->field($model, 'status')->dropDownList(Album::itemAlias('status')) ?>
 
 <div class="help-block"></div>
 </div>
