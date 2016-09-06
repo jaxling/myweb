@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/main1.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
   </head>
-  <body style="background-image: url('../images/background/<?= rand(1,5);?>.jpg')">
+  <body style="background-image: url(<?=$this->params['w_pic']?>)">
 
     <!-- Header -->
       <section id="header">
@@ -63,7 +63,7 @@
           <div class="row 0%">
             <div class="3u 12u(mobile)">
               <a href="images/thumbs/best_1.jpg" class="image fit">
-                <img src="images/thumbs/best_1.jpg" alt="" title="March 2015 , Walk on the edge of West Lake With My Brother Cheers" />
+                <img src="images/thumbs/best_1.jpg"  style="border:1px solid #fff;" alt="" title="March 2015 , Walk on the edge of West Lake With My Brother Cheers" />
               </a>
             </div>
             <div class="3u 12u(mobile)">

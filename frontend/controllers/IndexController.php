@@ -20,6 +20,7 @@ class IndexController extends FController
      */
     public function actionIndex()
     {
+        //读取
         return $this->render('index');
     }
 

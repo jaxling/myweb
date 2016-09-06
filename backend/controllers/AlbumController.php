@@ -104,10 +104,8 @@ class AlbumController extends AController
      */
     public function actionDelete($id)
     {
-        //$this->findModel($id)->delete();
-        $model=$this->findModel($id);
-        $model->status=2;
-        $model->save(false);
+        $this->findModel($id)->delete();
+
         return $this->redirect(['index']);
     }
 

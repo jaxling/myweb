@@ -83,6 +83,7 @@ class Album extends \yii\db\ActiveRecord
                 '1' => "旅行",              
                 '2' => "生活",
                 '3' => "随笔",
+                '4' => "站点素材"
             ],
             'status' => [
                 ''  =>'状态',

@@ -37,11 +37,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ],            
 
             'title',
-[
-    'attribute' => 'img_url',
-    'format' => 'image',
-    'value'=>function($data) { return $data->img_url.'!s100'; },
-],
+            [
+                'attribute' => 'img_url',
+                'format' => 'image',
+                'value'=>function($data) { return $data->img_url.'!s100'; },
+            ],
 
             [
                 'attribute' => 'status',
@@ -52,12 +52,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             //'img_url:url',
             //'img_url_thumb:url',
-            
+            [
+                'attribute' => 'is_page_img',
+                'value' => function ($model, $key, $index, $column) {
+                    return Gallery::itemAlias("is_page_img", $model->is_page_img);
+                },
+                'filter'=>Gallery::itemAlias("is_page_img"),
+            ],
             
             // 'desc:ntext',
             // 'is_page_img',
             // 'status',
-            // 'sort_number', 
+             'sort_number', 
             // 'create_at',
             // 'update_at',
 
