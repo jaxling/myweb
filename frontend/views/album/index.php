@@ -52,7 +52,7 @@
                   <li><a href="/">Home</a></li>
                   <li><a href="/music">Music</a></li>
                   <li><a href="/album">Album</a></li>
-                  <li><a href="/gallery">Demo</a></li>
+                  <li><a href="#">Demo</a></li>
               </ul>
           </div>
       </div>
@@ -75,19 +75,19 @@
             <?php if ($list): ?>
               <?php foreach ($list as $k => $v): ?>
 
-                <article class="item thumb" data-width="282">
+                <!-- <article class="item thumb" data-width="282">
                   <h2><?=$v['name']?></h2>
                   <a href="/album/<?=$v['id']?>" class="image">
                     <img src="<?=$v['page_img']?>" alt="">
                   </a>
-                </article>
+                </article> -->
 
-                <!-- <article class="item thumb" data-width="282">
+                <article class="item thumb" data-width="282">
                   <h2><?=$v['name']?></h2>
                   <a href="/album/<?=$v['id']?>" class="">
                     <img src="<?=$v['page_img']?>" alt="">
                   </a>
-                </article> -->
+                </article>
                 
               <?php endforeach ?>
             <?php endif ?>

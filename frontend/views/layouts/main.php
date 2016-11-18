@@ -67,7 +67,7 @@ AppAsset::register($this);
                 <li><a href="/">Home</a></li>
                 <li><a href="/music">Music</a></li>
                 <li><a href="/album">Album</a></li>
-                <li><a href="/gallery">Demo</a></li>
+                <li><a href="#">Demo</a></li>
             </ul>
         </div>
     </div>
