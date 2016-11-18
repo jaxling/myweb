@@ -39,7 +39,7 @@ class IndexController extends FController
         $friend_link = $cache->get('friend_link');
 
         if ($friend_link === false) {
-            $friend_link = \common\models\friendLink::find()->where(['status' => 1])->asArray()->all();
+            $friend_link = \common\models\FriendLink::find()->where(['status' => 1])->asArray()->all();
             $cache->set('friend_link', $friend_link);
         }
 
