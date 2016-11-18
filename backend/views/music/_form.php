@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use common\models\Music;
 /* @var $this yii\web\View */
 /* @var $model common\models\Music */
 /* @var $form yii\widgets\ActiveForm */
@@ -16,19 +16,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image_url')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'image_url')->textInput(['maxlength' => true,'style'=>'width:60%;display: inline; 
+    margin:0 20px 10px;']) ?>
 
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true,'style'=>'width:60%;display: inline; 
+    margin:0 20px 10px;']) ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'lyrics')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'create_time')->textInput() ?>
-
-    <?= $form->field($model, 'update_time')->textInput() ?>
-
-    <?= $form->field($model, 'is_show')->textInput() ?>
+    <?= $form->field($model, 'is_show')->dropDownList(Music::itemAlias('is_show')) ?>
 
     <?= $form->field($model, 'order_num')->textInput() ?>
 
@@ -39,15 +37,24 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        var button = '<button type="button" data-toggle="modal" data-target="#myModal" id="upload_img_url" upload_field="gallery-img_url"  style="">上传</button>';
-        $('#gallery-img_url').after(button);
-        $('#upload_img_url').click(function(){
-            var upload_field = $(this).attr('upload_field');
-            $('#upload_img_iframe').attr('src','/tool/uploadupyun?upload_field='+upload_field);
-        });
-        
-
+<?php $this->beginBlock('footer_js') ?>
+//封面图
+jQuery(document).ready(function () {
+    var button = '<button type="button" data-toggle="modal" data-target="#myModal" id="upload_img_url" upload_field="music-image_url"  style="">上传</button>';
+    $('#music-image_url').after(button);
+    $('#upload_img_url').click(function(){
+        var upload_field = $(this).attr('upload_field');
+        $('#upload_img_iframe').attr('src','/tool/uploadupyun?upload_field='+upload_field);
     });
-</script>
+
+    var button = '<button type="button" data-toggle="modal" data-target="#myModal" id="upload_img" upload_field="music-url"  style="">上传</button>';
+    $('#music-url').after(button);
+    $('#upload_img').click(function(){
+        var upload_field = $(this).attr('upload_field');
+        $('#upload_img_iframe').attr('src','/tool/uploadupyun?upload_field='+upload_field);
+    });
+    
+
+});
+<?php $this->endBlock() ?>  
+<?php $this->registerJs($this->blocks['footer_js'], \yii\web\View::POS_END); ?>

@@ -23,30 +23,54 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
+<style type="text/css">
+    .nav{
+    width: 100%;
+    height: 50px;
+    font-size: 22px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99999;
+    background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+}
+.nav_li ul{
+    width: 800px;
+    list-style: none;
+    margin: 0 auto;
+    position: relative;
+    height: 35px;
+    margin-top:8px;
+    z-index: 3;
+}
+.nav_li ul li{
+    width:25%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.nav_li ul li a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    color:#ffffff;
+    font-family:"黑体"; 
+}
+</style>
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/index']],
-        ['label' => 'Music', 'url' => ['/music']],
-        ['label' => 'Album', 'url' => ['/album']],
-        ['label' => 'About', 'url' => ['/site/about']],
-    ];
-    
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+
+    <div class="nav">
+        <div class="nav_li">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/music">Music</a></li>
+                <li><a href="/album">Album</a></li>
+                <li><a href="/gallery">Demo</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="container">
         <?= Breadcrumbs::widget([

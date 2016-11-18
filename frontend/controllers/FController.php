@@ -36,6 +36,7 @@ class FController extends Controller
         $img_url = \common\models\Gallery::find()
                 ->select("img_url")
                 ->where(['album.status' => 1,'gallery.status' => 1,'album.category_id' => 4])
+                ->andwhere("sort_number > 900 AND sort_number < 999")
                 ->joinWith('album',['gallery.album_id' => 'album.id'])
                 ->asArray()
                 ->all();

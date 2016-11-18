@@ -41,10 +41,10 @@ class Motto extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'english' => 'English',
-            'chinese' => 'Chinese',
-            'add_time' => 'Add Time',
+            'id' => '编号',
+            'english' => '英文',
+            'chinese' => '中文',
+            'add_time' => '创建时间',
         ];
     }
 }

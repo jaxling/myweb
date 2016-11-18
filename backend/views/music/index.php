@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'author',
             'image_url:url',
             'url:url',
-            // 'description:ntext',
+             'description:ntext',
             // 'lyrics:ntext',
             // 'create_time',
             // 'update_time',

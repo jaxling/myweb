@@ -11,11 +11,54 @@
 	#palylist li{float: left;}
 	#background{background-image: url('http://static.yidianling.com/v3/images/fm-background/fm_<?= rand(1,11);?>.jpg')}
 	#player{background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0;margin-bottom:10px;box-shadow:0 2px 6px rgba(0, 0, 0, 0.5);border-radius:5px}
+	.nav{
+    width: 100%;
+    height: 50px;
+    font-size: 23.5px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99999;
+    background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+}
+.nav_li ul{
+    width: 800px;
+    list-style: none;
+    margin: 0 auto;
+    position: relative;
+    height: 35px;
+    margin-top:12.5px;
+    z-index: 3;
+}
+.nav_li ul li{
+    width:25%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.nav_li ul li a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    color:#ffffff;
+    font-family:"楷体"; 
+}
 </style>
 <body class="keBody">
-<div class="kePublic" style="padding:90px;">
+<div class="kePublic" style="padding:110px;">
 <!--效果html开始-->
-	<div id="background"></div>
+	<div id="background">
+		<div class="nav">
+	        <div class="nav_li">
+	            <ul>
+	                <li><a href="/">Home</a></li>
+	                <li><a href="/music">Music</a></li>
+	                <li><a href="/album">Album</a></li>
+	                <li><a href="/gallery">Demo</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
 	<div>
 		<div id="player">
 		<div class="cover"></div>

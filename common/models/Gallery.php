@@ -106,12 +106,24 @@ class Gallery extends \yii\db\ActiveRecord
                 if(!$this->album_id) $this->album_id = 1;
                 if(!$this->is_page_img) $this->is_page_img = 1;
                 if(!$this->status) $this->status = 1;
-                
                 $this->create_at = date("Y-m-d H:i:s", time());
                 $this->update_at = date("Y-m-d H:i:s", time());
+
             }else{
                 $this->update_at = date("Y-m-d H:i:s", time());
             }
+            //添加、修改图片排序如果写900，则判断排序，修改
+            $check = 900;
+            if($this->sort_number == 900){
+                $check = self::find()
+                       ->select('sort_number')
+                       ->where("sort_number > 900 AND sort_number < 999 AND status = 1")
+                       ->asarray()
+                       ->orderBy('sort_number desc')
+                       ->scalar();
+                $this->sort_number = $check + 1;
+            }
+                
             return true;
         } else {
             return false;

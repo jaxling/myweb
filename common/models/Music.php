@@ -35,7 +35,7 @@ class Music extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'author', 'image_url', 'url', 'description', 'lyrics', 'create_time', 'update_time'], 'required'],
+            [['name', 'author', 'image_url', 'url'], 'required'],
             [['description', 'lyrics'], 'string'],
             [['create_time', 'update_time'], 'safe'],
             [['is_show', 'order_num'], 'integer'],
@@ -51,16 +51,52 @@ class Music extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'author' => 'Author',
-            'image_url' => 'Image Url',
-            'url' => 'Url',
-            'description' => 'Description',
-            'lyrics' => 'Lyrics',
-            'create_time' => 'Create Time',
-            'update_time' => 'Update Time',
-            'is_show' => 'Is Show',
-            'order_num' => 'Order Num',
+            'name' => '歌名',
+            'author' => '歌手',
+            'image_url' => '专辑封面',
+            'url' => '歌曲链接',
+            'description' => '描述',
+            'lyrics' => '歌词',
+            'create_time' => '创建时间',
+            'update_time' => '更新时间',
+            'is_show' => '是否显示',
+            'order_num' => '排序',
         ];
     }
+
+    public static function itemAlias ($type, $code = NULL)
+    {
+        $_items = [
+            'is_show' => [
+                '1' => "显示",              
+                '2' => "隐藏",
+                             
+            ],
+        ];
+
+        if (isset($code))
+            return isset($_items[$type][$code]) ? $_items[$type][$code] : false;
+        else
+            return isset($_items[$type]) ? $_items[$type] : false;
+    }
+
+    /*
+    * 保存前执行的操作
+    */
+    public function beforeSave($insert) {
+        if (parent::beforeSave($insert)) {
+            //是否是新添加
+            if($this->isNewRecord) {
+                if(!$this->is_show) $this->is_show = 1;
+                
+                $this->create_time = date("Y-m-d H:i:s", time());
+                $this->update_time = date("Y-m-d H:i:s", time());
+            }else{
+                $this->update_time = date("Y-m-d H:i:s", time());
+            }
+            return true;
+        } else {
+            return false;
+        }
+    } 
 }

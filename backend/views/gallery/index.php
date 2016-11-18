@@ -16,10 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="gallery-index" style="overflow:auto;">
 
 <!--     <h1><?= Html::encode($this->title) ?></h1> -->
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('上传 照片', ['create'], ['class' => 'btn btn-success']) ?>
+        <span style="color:red;margin-left:25px;">站点素材相册中排序 900 - 999为站点背景图</span>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
