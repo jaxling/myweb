@@ -4,11 +4,11 @@
     <title>Ling's Album</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="resoursejs/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="resoursecss/main.css" />
-    <noscript><link rel="stylesheet" href="resoursecss/noscript.css" /></noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="resoursecss/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="resoursecss/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="resourse/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="resourse/css/main.css" />
+    <noscript><link rel="stylesheet" href="resourse/css/noscript.css" /></noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="resourse/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="resourse/css/ie9.css" /><![endif]-->
   </head>
 <style type="text/css">
   .nav{
@@ -98,13 +98,13 @@
     </div>
 
     <!-- Scripts -->
-      <script src="resoursejs/jquery.min.js"></script>
-      <script src="resoursejs/jquery.poptrox.min.js"></script>
-      <script src="resoursejs/skel.min.js"></script>
-      <script src="resoursejs/skel-viewport.min.js"></script>
-      <script src="resoursejs/util.js"></script>
-      <!--[if lte IE 8]><script src="resoursejs/ie/respond.min.js"></script><![endif]-->
-      <script src="resoursejs/main.js"></script>
+      <script src="resourse/js/jquery.min.js"></script>
+      <script src="resourse/js/jquery.poptrox.min.js"></script>
+      <script src="resourse/js/skel.min.js"></script>
+      <script src="resourse/js/skel-viewport.min.js"></script>
+      <script src="resourse/js/util.js"></script>
+      <!--[if lte IE 8]><script src="resourse/js/ie/respond.min.js"></script><![endif]-->
+      <script src="resourse/js/main.js"></script>
 
   </body>
 </html>

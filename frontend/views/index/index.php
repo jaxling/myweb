@@ -4,9 +4,9 @@
     <title>Ling丶</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="resoursejs/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="resoursecss/main1.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="resoursecss/ie8.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="resourse/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="resourse/css/main1.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="resourse/css/ie8.css" /><![endif]-->
     <style type="text/css">.iiimg img{border:1px solid #fff;}</style>
   </head>
   <body style="background-image: url(<?=$this->params['w_pic']?>)">
@@ -95,13 +95,13 @@
     </section>
 
     <!-- Scripts -->
-      <script src="resoursejs/jquery.min.js"></script>
-      <script src="resoursejs/jquery.scrolly.min.js"></script>
-      <script src="resoursejs/jquery.poptrox.min.js"></script>
-      <script src="resoursejs/skel.min.js"></script>
-      <script src="resoursejs/util.js"></script>
-      <!--[if lte IE 8]><script src="resoursejs/ie/respond.min.js"></script><![endif]-->
-      <script src="resoursejs/main1.js"></script>
+      <script src="resourse/js/jquery.min.js"></script>
+      <script src="resourse/js/jquery.scrolly.min.js"></script>
+      <script src="resourse/js/jquery.poptrox.min.js"></script>
+      <script src="resourse/js/skel.min.js"></script>
+      <script src="resourse/js/util.js"></script>
+      <!--[if lte IE 8]><script src="resourse/js/ie/respond.min.js"></script><![endif]-->
+      <script src="resourse/js/main1.js"></script>
 
   </body>
 </html>
