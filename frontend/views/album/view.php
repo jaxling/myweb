@@ -120,13 +120,13 @@ a:hover{color:#999;}
 </body>
 <script src="http://static.tianpinwang.com.cn/v1/mobile/js/jquery-weui.min.js"></script>
 
-<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/jquery.poptrox.min.js"></script>
-<script src="../../assets/js/skel.min.js"></script>
-<script src="../../assets/js/skel-viewport.min.js"></script>
-<script src="../../assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="../../assets/js/main.js"></script>
+<script type="text/javascript" src="../resoursejs/jquery.min.js"></script>
+<script src="../../resoursejs/jquery.poptrox.min.js"></script>
+<script src="../../resoursejs/skel.min.js"></script>
+<script src="../../resoursejs/skel-viewport.min.js"></script>
+<script src="../../resoursejs/util.js"></script>
+<!--[if lte IE 8]><script src="resoursejs/ie/respond.min.js"></script><![endif]-->
+<script src="../../resoursejs/main.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function (){
