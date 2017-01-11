@@ -35,7 +35,7 @@ class Gallery extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['img_url', ], 'required'],
+            [['img_url','sort_number'], 'required'],
             [['album_id', 'is_page_img', 'status','sort_number'], 'integer'],
             [['desc'], 'string'],
             [['create_at', 'update_at'], 'safe'],
@@ -79,12 +79,10 @@ class Gallery extends \yii\db\ActiveRecord
     {
         $_items = [
             'is_page_img' => [
-                ''  =>'',
                 '1' => "否",              
                 '2' => "是",
             ],
             'status' => [
-                ''  =>'状态',
                 '1' => "显示",              
                 '2' => "隐藏",
             ],
@@ -108,6 +106,8 @@ class Gallery extends \yii\db\ActiveRecord
                 if(!$this->status) $this->status = 1;
                 $this->create_at = date("Y-m-d H:i:s", time());
                 $this->update_at = date("Y-m-d H:i:s", time());
+                if(!$this->img_url_thumb) $this->img_url_thumb = '';
+                if(!$this->desc) $this->desc = '';
 
             }else{
                 $this->update_at = date("Y-m-d H:i:s", time());

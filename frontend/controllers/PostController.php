@@ -127,6 +127,8 @@ class PostController extends FController
         ]);
     }
 
-
+    public function actionDemo(){
+        return $this->renderPartial('demo');
+    }
 
 }

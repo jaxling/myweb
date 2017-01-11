@@ -56,7 +56,7 @@
             <?php foreach ($img_url as $k => $v): ?>
               <div class="3u 12u(mobile)">
                 <a href="<?=$v['img_url']?>" class="image fit iiimg">
-                  <img src="<?=$v['img_url']?>" alt="<?=$v['title']?>" title="<?=$v['title']?>" />
+                  <img src="<?=$v['img_url']?>" alt="<?=$v['title']?>" style='' title="<?=$v['title']?>" />
                 </a>
               </div>
             <?php endforeach ?>
