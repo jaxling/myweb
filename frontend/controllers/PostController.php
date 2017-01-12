@@ -22,108 +22,91 @@ class PostController extends FController
      */
     public function actionIndex()
     {
+        $cur_page = Yii::$app->request->get('page');
 
-        $where = "";
-        $c = intval(Yii::$app->request->get('c'));
-        if ($c) {
-            $where .= " `post_category_id`=$c AND ";
+        $where = '';
+        $title = trim(Yii::$app->request->get('title',''));
+
+        if (isset(explode('_p',$title)[1])) {
+            $cur_page = explode('_p',$title)[1];
+            $title = explode('_p',$title)[0];
         }
-        $name = strip_tags(Yii::$app->request->get('name'));
-        if ($name) {
-            $where .= " `title` like '%$name%' or `content` like '%$name%' AND ";
+        $where .= " WHERE `title` LIKE '%{$title}%' OR `author` LIKE '%{$title}%' OR `content` LIKE '%{$title}%' OR `desc` LIKE '%{$title}%'";
+        //总数
+        $sql = "SELECT count(*) FROM `post`".$where;
+        $count = Yii::$app->db->createCommand($sql)->queryScalar();
+
+        //分页
+        $page_btn = 10;    //几个按钮
+        $page_limit = 20; //一页多少数据
+        $page_sum = intval(($count+$page_limit-1)/$page_limit);
+        if (!$cur_page) {
+            $cur_page = 1;
+        }elseif ($cur_page>$page_sum) {
+            $cur_page = $page_sum;
         }
+        $page_offset = ($cur_page-1)*$page_limit;
 
-        $where .= " status=1 AND  post_category_id!=99";
+        //分页后的列表
+        $sql = "SELECT * FROM `post` ".$where." ORDER BY `create_at` DESC LIMIT $page_offset,$page_limit";
+        $list = Yii::$app->db->createCommand($sql)->queryAll();
 
-        //echo $where;exit;
-
-        $query = Post::find()
-            ->where( $where )
-            ->orderBy('id DESC');
-        $countQuery = clone $query;
-        //$pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>'5','defaultPageSize' => 5]);
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>'10','defaultPageSize' => 10]);
-        $models = $query->offset($pages->offset)
-            ->limit($pages->limit)
-            ->all();
-
-        $this->getView()->title = "Blog - ".$this->w_config['website_name'];  
-            
-        return $this->render('index',[
-            'models' => $models,
-            'pages' => $pages,
-        ]);
-    }
-
-
-    /**
-     * Displays a single Test model.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionView($id)
-    {
-        $id = intval($id);
-        $model = Post::findOne($id);
-
-        $title = isset($model->title) ? strip_tags($model->title) : 'Go';
-        $this->getView()->title = $title." - ".$this->w_config['website_name']; 
-
-
-        $post_comment = new PostComment();
-        $post_comment->post_id = $model->id;
-
-        //评论
-        if ($post_comment->load(Yii::$app->request->post())) {
-            if ($post_comment->validate()) {
-                // form inputs are valid, do 
-                if(preg_match('#http|com#i', $post_comment->title) || preg_match('#http|com#i', $post_comment->content)) {
-                    //do something
-                } else {
-                   $post_comment->save(); 
-                }
-                $this->refresh();
-                //$this->redirect(Url::toRoute(['post/view', 'id' => $model->id]));
-            }
-        }
-
-        $friendlink = [];
         
-        return $this->render('view', [
-            'model'=>$model,
-            'post_comment'=>$post_comment,
-            'friendlink'=>$friendlink,
+        //热门心事
+        $sql = "SELECT * FROM `post` ORDER BY `hits` DESC ,`create_at` DESC LIMIT 10";
+        $hot_ask = Yii::$app->db->createCommand($sql)->queryAll();
+
+        return $this->renderPartial('index',[
+            'title'=>$title,
+            'list' => $list,
+            'page_btn' => $page_btn,
+            'page_sum' => $page_sum,
+            'cur_page' => $cur_page,
+            'page_limit' => $page_limit,
+            'page_offset' => $page_offset,
+            'hot_ask' => $hot_ask,
         ]);
     }
 
 
-    public function actionAbout()
+    public function actionView()
     {
-        $id = 100;
-        $model = Post::findOne($id);
+        $id = (int)Yii::$app->request->get('id');
 
-        $title = isset($model->title) ? strip_tags($model->title) : 'Go';
-        $this->getView()->title = $title." - ".$this->w_config['website_name']; 
+        $sql = "SELECT * FROM `ask` WHERE `id` = {$id}";
+        $detail = Yii::$app->db->createCommand($sql)->queryOne();
 
-        $post_comment = new PostComment();
-        $post_comment->post_id = $model->id;
+        if (!$detail) throw new BadRequestHttpException('该心事不存在');
 
-        //评论
-        if ($post_comment->load(Yii::$app->request->post())) {
-            if ($post_comment->validate()) {
-                // form inputs are valid, do 
-                $post_comment->save();
-                $this->refresh();
-                //$this->redirect(Url::toRoute(['post/view', 'id' => $model->id]));
-            }
+        //增加该心事点击量
+        $sql = "UPDATE `ask` SET `click` = {$detail['click']}+1 WHERE `id` = {$id}";
+        $aaa = Yii::$app->db->createCommand($sql)->execute();
+
+        //查询该心事的回复列表
+        $sql = "SELECT * FROM `answer` WHERE `ask_origin_id` = {$detail['origin_id']}";
+        $answer = Yii::$app->db->createCommand($sql)->queryAll();
+
+        //热门心事
+        $sql = "SELECT * FROM `ask` WHERE `id` <> {$id} ORDER BY `click` DESC ,`create_time` DESC LIMIT 10";
+        $hot_ask = Yii::$app->db->createCommand($sql)->queryAll();
+
+        //页面SEO
+        $sql = "SELECT * FROM `seo` WHERE `position` = 'zixun_details'";
+        $seo = Yii::$app->db->createCommand($sql)->queryOne();
+
+        $content = $detail["content"];
+        $seo['title'] = str_replace('{title}', $detail['title'], $seo['title']);
+        if(strlen($detail["content"])>600){
+            $content = mb_substr($detail["content"],0,200,'utf-8').'...';
         }
+        $seo['description'] = str_replace('{description}',$content,$seo['description']);
 
-        $friendlink = Friendlink::find()->where(['status'=>1,'position'=>1])->all();
+        Yii::$app->view->params['seo'] = $seo;
 
-        return $this->render('view', [
-            'model'=>$model,
-            'post_comment'=>$post_comment,
-            'friendlink'=>$friendlink,
+        return $this->render('detail',[
+            'detail' => $detail,
+            'answer' => $answer,
+            'hot_ask' => $hot_ask,
         ]);
     }
 

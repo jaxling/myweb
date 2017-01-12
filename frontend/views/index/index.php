@@ -44,7 +44,7 @@
 
     <!-- Feature 2 -->
     <!-- Portfolio -->
-      <article class="container box style2" style="margin-left:-15px;">
+      <article class="container box style2">
         <header style="border:1px solid #fff;background-color:#000;opacity:0.5;color:#fff;"><!-- background-color:transparent;color:#fff -->
           <h2>Own photos</h2>
           <p>The picture below is my own shot<br />
@@ -56,7 +56,7 @@
             <?php foreach ($img_url as $k => $v): ?>
               <div class="3u 12u(mobile)">
                 <a href="<?=$v['img_url']?>" class="image fit iiimg">
-                  <img src="<?=$v['img_url']?>" alt="<?=$v['title']?>" style='' title="<?=$v['title']?>" />
+                  <img width="100" src="<?=$v['img_url']?>" alt="<?=$v['title']?>" style='' title="<?=$v['title']?>" />
                 </a>
               </div>
             <?php endforeach ?>
